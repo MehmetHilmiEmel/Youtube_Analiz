@@ -11,3 +11,10 @@
   önce içerisinde "Hakaret", "Irkçılık" ve "Cinsiyetçilik" içeren
   yorumları tespit edip, kullanıcıları bu tarz içerikli yorumlardan
   korumaktır.
+
+# Projede Kullanılan Kütühaneler
+Projede kullanılan kütüphaneleri ve versiyonlarını görmek için requirements.txt dosyasına tıklayabilirsiniz.
+
+# Projeyi Nasıl Kullanabilirsiniz?
+Öncelikle masaüstünde bir klasör oluşturup bu git reposunu o klasörün içine klonlayın <br>
+<p>git clone </p>
