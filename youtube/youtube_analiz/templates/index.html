@@ -1,0 +1,120 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+<!-- Header-->
+<header class="masthead text-center text-white">
+  {% if user.is_authenticated %}
+  <div class="masthead-content">
+    <div class="container px-5">
+      <h1 class="masthead-heading mb-1" style="color:black;">Youtube Siber Zorbalık Analizi</h1>
+      <br>
+      
+        <form method="POST" action="{% url 'comment' %}">
+          {% csrf_token %}
+          <Label class ="mb-3" type="text" name="link" style="color:black;"> Aşağıya istediğiniz videonun URL'sini girin:</Label><br>
+            <input class ="mb-3" type="text" name="link" size="50" placeholder="https://www.youtube.com/watch?v=C8WA8HjTXN0" />
+            <br>
+          
+  
+          <button type="submit" class="btn btn-primary mb-3">Gönder</button>
+        </form>
+    
+
+  </div>
+  {% endif %}
+  <div class="bg-circle-1 bg-circle"></div>
+  <div class="bg-circle-2 bg-circle"></div>
+  <div class="bg-circle-3 bg-circle"></div>
+  <div class="bg-circle-4 bg-circle"></div>
+</header>
+<hr>
+<!-- Content section 1-->
+<section id="scroll">
+  <div class="container px-5">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6 order-lg-2">
+        <div class="p-5">
+          <img
+            class="img-fluid "
+            src="{% static 'youtube_analiz/pexels-anete-lusina-5240547.jpg' %}"
+            alt="..."
+          />
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div class="p-5">
+          <h2 class="display-4">Siber Zorbalık</h2>
+          <p>
+            Siber zorbalık, Bir kişiyi veya kişinin içinde bulunduğu belli bir topluluğu hedef alan her türlü aşağılayıcı, küçük düşürücü ve zedeleyici paylaşımların tümüdür. UNESCO’nun siber zorbalığın yüksek gelir düzeyindeki ülkelerde yaygınlığı ile ilgili verilerine göre siber zorbalıktan etkilenen çocukların ve ergenlerin oranı yüzde 5 ile yüzde 21 arasında değişmektedir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Content section 2-->
+<section>
+  <div class="container px-5">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6">
+        <div class="p-5">
+          <img
+            style="height=2px;"
+            class="img-fluid "
+            src="{% static 'youtube_analiz/pexels-magnus-mueller-2818118.jpg' %}"
+            alt="..."
+          />
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="p-5">
+          <h2 class="display-4">Problemin Yaygınlığı</h2>
+          <p>
+            <ul>
+              <li>Çocukların %43 ü en az bir kere siber zorbalıkla karşılaştıklarını belirtiyorlar.
+              </li>
+              <li>Öğrencilerin %70 i sıkça siber zorbalığa şahit olduklarını belirtiyorlar.
+              </li>
+              <li>Gençlerin %80 i cep telefonlarını düzenli olarak her gün kullanıyorlar.
+              </li>
+              <li>Gençlerin %81 i siber zorbalığın okuldaki zorbalığa göre çok daha az yakalandığını daha kolay kaçıldığını düşünüyor.
+              </li>
+              <li>Siber zorbalığa maruz kalan her 10 kurbandan sadece 1 tanesi ailelerini veya güvendikleri bir büyüklerini haberdar etmişler.
+              </li>
+              <li>Siber zorbalığa maruz kalan çocukların diğerlerine göre 2 ile 9 kat daha fazla intihara eğilimli olduğu ortaya çıkmış.
+              </li>
+              <li>Kızlar erkeklerden iki kat daha fazla siber zorbalığa maruz kalmışlar.
+              </li>
+
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Content section 3-->
+<section>
+  <div class="container px-5">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6 order-lg-2">
+        <div class="p-5">
+          <img
+            class="img-fluid "
+            src="{% static 'youtube_analiz/pexels-pixabay-221181.jpg' %}"
+            alt="..."
+          />
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <div class="p-5">
+          <h2 class="display-4">Projedeki Amaç</h2>
+          <p>
+    Youtube videolarına yapılan yorumlardan kaç tanesinin siber zorbalık içeren ifadeler içerdiğini tespit etmek, ayrıca o yorumun hangi kategoriye ait olduğunu kullanıcılara göstermek amacıyla bu proje hazırlanmıştır.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include 'footer.html' %}
+{% endblock content %}

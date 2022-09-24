@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<div
+  class="card mb-3 border-danger"
+  style="max-width: 1000px; margin: 0 auto; float: none; margin-bottom: 10px"
+>
+  <form action="delete_video" method="POST">
+    {% csrf_token %}
+    <img
+      style="
+        max-width: 1000px;
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+      "
+      src="{{video.video_image}}"
+    />
+    <p>{{video.title}} isimli videoyu silmek istediğinizden emin misiniz?</p>
+    <input class="btn btn-warning" value="Sil" type="submit" />
+  </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container mt-3">
+  <div class="col">
+    <h1>Kaydol</h1>
+    <hr />
+    <form method="POST">
+      {% csrf_token %} {% if error %}
+      <div class="alert alert-warning">{{error}}</div>
+      {% endif %}
+      <div class="mb-3">
+        <label for="username" class="form-label">Kullanıcı Adı</label>
+        <input type="text" class="form-control" name="username" />
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Şifre</label>
+        <input type="password" class="form-control" name="password" />
+      </div>
+      <div class="mb-3">
+        <label for="repassword" class="form-label">Şifre (Yeniden)</label>
+        <input type="password" class="form-control" name="repassword" />
+      </div>
+      <input type="submit" value="Login" class="btn btn-danger" />
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,101 @@
+{% extends 'base.html' %} {% block content%} {% for i in d %}
+<div class="row g-1">
+  <div
+    class="card mb-3 border-danger"
+    style="max-width: 1000px; margin: 0 auto; float: none; margin-bottom: 10px"
+  >
+    <div class="row g-0">
+      <div class="col-md-6">
+        <div class="card-body">
+          <p class="card-text">{{text}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div>
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="row g-0">
+      <div class="col-md-3">
+        <div class="card-body">
+          Label: <a id="notr">{{i.0.label}}</a> Score:<a id="score_notr"
+            >{{i.0.score}} </a
+          ><br />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card-body">
+          Label:<a id="cinsiyet">{{i.1.label}}</a> Score:<a id="score_cinsiyet"
+            >{{i.1.score}} </a
+          ><br />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card-body">
+          Label:<a id="hakaret">{{i.2.label}}</a> Score:<a id="score_hakaret"
+            >{{i.2.score}} </a
+          ><br />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card-body">
+          Label:<a id="irkcilik">{{i.3.label}}</a> Score:<a id="score_irkcilik"
+            >{{i.3.score}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  notr = document.getElementById("notr").innerHTML;
+  cinsiyet = document.getElementById("cinsiyet").innerHTML;
+  hakaret = document.getElementById("hakaret").innerHTML;
+  irkcilik = document.getElementById("irkcilik").innerHTML;
+  notr_score = document.getElementById("score_notr").innerHTML;
+  cinsiyet_score = document.getElementById("score_cinsiyet").innerHTML;
+  hakaret_score = document.getElementById("score_hakaret").innerHTML;
+  irkcilik_score = document.getElementById("score_irkcilik").innerHTML;
+  const labels = [notr, cinsiyet, hakaret, irkcilik];
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [
+          Number(notr_score.slice(2, 4)),
+          Number(cinsiyet_score.slice(2, 4)),
+          Number(hakaret_score.slice(2, 4)),
+          Number(irkcilik_score.slice(2, 4)),
+        ],
+        backgroundColor: [
+          "rgb(255, 99, 132)",
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
+          "rgb(0, 255, 0)",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
+
+  const config = {
+    type: "doughnut",
+    data: data,
+  };
+</script>
+<script>
+  const myChart = new Chart(document.getElementById("myChart"), config);
+</script>
+{% endfor %} {% include 'footer.html' %}{% endblock content %}
