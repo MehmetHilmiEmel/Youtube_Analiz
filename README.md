@@ -43,3 +43,5 @@ $ python manage.py runserver
 ```
 
 komutlarını girin. 
+
+Not(youtube_analiz/views.py) dosyasında key değişkenine string formatında kendi Google Developer anahtarınızı giriniz.
