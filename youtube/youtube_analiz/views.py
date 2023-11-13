@@ -15,7 +15,7 @@ key="ENTER YOUR GOOGLE DEVELOPER KEY"
 import requests
 
 API_URL = "https://api-inference.huggingface.co/models/nanelimon/bert-base-turkish-bullying"
-headers = {"Authorization": f"Bearer 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"}
+headers = {"Authorization": f"Bearer YOUR_HUGGING_FACE_KEY"}
 
 
 
